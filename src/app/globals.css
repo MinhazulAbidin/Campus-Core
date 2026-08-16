@@ -16,10 +16,10 @@
   --color-foreground: var(--foreground);
   --color-lamaSky: var(--lamaSky);
   --color-lamaSkyLight: var(--lamaSkyLight);
-  --color-lama-purple: var(--lamaPurple);
-  --color-lama-purple-light: var(--lamaPurpleLight);
-  --color-lama-yellow: var(--lamaYellow);
-  --color-lama-yellow-light: var(--lamaYellowLight);
+  --color-lamaPurple: var(--lamaPurple);
+  --color-lamaPurpleLight: var(--lamaPurpleLight);
+  --color-lamaYellow: var(--lamaYellow);
+  --color-lamaYellowLight: var(--lamaYellowLight);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
