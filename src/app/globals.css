@@ -14,8 +14,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-lama-sky: var(--lamaSky);
-  --color-lama-sky-light: var(--lamaSkyLight);
+  --color-lamaSky: var(--lamaSky);
+  --color-lamaSkyLight: var(--lamaSkyLight);
   --color-lama-purple: var(--lamaPurple);
   --color-lama-purple-light: var(--lamaPurpleLight);
   --color-lama-yellow: var(--lamaYellow);
