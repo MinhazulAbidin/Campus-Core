@@ -39,13 +39,11 @@ const CountCharts = () => {
         <Image src="/moreDark.png" alt="More" width={20} height={20} />
       </div>
       {/* middle */}
-      <div className="relative w-full h-[75%]">
+      <div className="relative w-full">
         <RadialBarChart
           style={{
             width: "100%",
-            maxWidth: "700px",
-            maxHeight: "80vh",
-            aspectRatio: 1.618,
+            height: "100%"
           }}
           responsive
           cx="50%"
@@ -56,7 +54,6 @@ const CountCharts = () => {
           data={data}
         >
           <RadialBar background dataKey="count" />
-          {/* <RechartsDevtools /> */}
         </RadialBarChart>
         <Image
           src="/maleFemale.png"
@@ -67,7 +64,7 @@ const CountCharts = () => {
         />
       </div>
       {/* bottom */}
-      <div className="flex justify-center gap-16">
+      <div className="flex justify-center gap-16 mt-2">
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-2">
             <div className="w-5 h-5 bg-lamaSky rounded-full" />
