@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function DashboardLayout({ children }: LayoutProps<"/">) {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex h-screen">
       {/* left */}
       <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] p-4">
         <Link

@@ -30,3 +30,11 @@
     --foreground: #ededed;
   }
 }
+
+.react-calendar__tile--active{
+  background-color: var(--lamaSky) !important;
+  color: black !important;
+}
+.react-calendar__navigation__label__labelText {
+  font-weight: 600;
+}
