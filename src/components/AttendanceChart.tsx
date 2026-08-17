@@ -66,7 +66,7 @@ const AttendanceChart = () => {
         <Legend
           align="left"
           verticalAlign="top"
-          wrapperStyle={{ paddingTop: "20px", paddingBottom: "20px" }}
+          wrapperStyle={{ paddingTop: "10px", paddingBottom: "20px" }}
         />
         <Bar dataKey="present" fill="#c3ebfa" radius={[10, 10, 0, 0]} legendType="circle" />
         <Bar dataKey="absent" fill="#fae27c" radius={[10, 10, 0, 0]} legendType="circle" />
