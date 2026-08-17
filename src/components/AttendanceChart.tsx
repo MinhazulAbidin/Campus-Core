@@ -57,7 +57,7 @@ const AttendanceChart = () => {
         }}
         responsive
         data={data}
-        barSize={20}
+        barSize={12}
       >
         <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ddd"/>
         <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: "#d1d5db" }} />

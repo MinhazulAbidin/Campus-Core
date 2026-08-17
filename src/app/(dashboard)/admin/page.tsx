@@ -21,11 +21,11 @@ const AdminPage = () => {
           {/* middle chart */}
           <div className="flex flex-col gap-4 lg:flex-row">
             {/* count chart */}
-            <div className="w-full lg:w-1/3 h-112.5">
+            <div className="w-full lg:w-1/3">
               <CountCharts />
             </div>
             {/* attendance chart */}
-            <div className="w-full lg:w-2/3 h-112.5">
+            <div className="w-full lg:w-2/3">
               <AttendanceChart />
             </div>
           </div>
