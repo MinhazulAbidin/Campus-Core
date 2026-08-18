@@ -9,9 +9,37 @@ const localizer = momentLocalizer(moment);
 const BigCalender = () => {
   const [view, setView] = useState<View>(Views.WORK_WEEK);
 
-
   const handleViewChange = (newView: View) => {
     setView(newView);
+  };
+  const eventPropGetter = (event: { title?: string | number }) => {
+    const eventClasses: Record<string, string> = {
+      Math: "event-math",
+      English: "event-english",
+      Biology: "event-biology",
+      Physics: "event-physics",
+      Chemistry: "event-chemistry",
+      History: "event-history",
+    };
+
+    return {
+      className: eventClasses[String(event.title)] || "",
+    };
+  };
+
+  const CustomEvent = ({ event }: { event: { start: Date | string; title?: string | number } }) => {
+    const time = new Date(event.start).toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+    });
+
+    return (
+      <div className="custom-event">
+        <span className="custom-event-time">{time}</span>
+
+        <span className="custom-event-title">{event.title}</span>
+      </div>
+    );
   };
 
   return (
@@ -25,6 +53,10 @@ const BigCalender = () => {
         view={view}
         onView={handleViewChange}
         style={{ height: "98%" }}
+        eventPropGetter={eventPropGetter}
+        components={{
+          event: CustomEvent,
+        }}
       />
     </div>
   );

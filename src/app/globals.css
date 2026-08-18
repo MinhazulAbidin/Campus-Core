@@ -31,112 +31,518 @@
   }
 }
 
-.react-calendar__tile--active {
-  background-color: var(--lamaSky) !important;
-  color: black !important;
+.react-calendar {
+  width: 100% !important;
+  border: none !important;
+  font-family: "Inter", sans-serif !important;
 }
 
 .react-calendar__navigation__label__labelText {
   font-weight: 600;
 }
 
+.react-calendar__tile--active {
+  background-color: #c3ebfa !important;
+  color: black !important;
+}
+
+/* =========================================================
+   REACT BIG CALENDAR — MODERN SCHOOL DASHBOARD
+========================================================= */
+
+.rbc-calendar {
+  font-family: inherit !important;
+  color: #1f2937 !important;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.rbc-toolbar {
+  margin-bottom: 18px !important;
+  gap: 10px !important;
+  align-items: center !important;
+}
+
 .rbc-btn-group:first-child {
-  display: none;
+  display: none !important;
 }
 
 .rbc-toolbar-label {
   text-align: right !important;
-  padding-right: 20px !important;
+  padding: 0 20px !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
 }
 
 .rbc-btn-group:last-child {
-  font-size: 13px;
+  display: flex !important;
+  gap: 5px !important;
 }
 
 .rbc-btn-group:last-child button {
-  border: none;
-  background-color: #f1f0ff;
-  margin-right: 3px !important;
+  border: none !important;
+  background: #f8f7ff !important;
+  color: #6b7280 !important;
+  border-radius: 8px !important;
+  padding: 7px 12px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+.rbc-btn-group:last-child button:hover {
+  background: #eeeeff !important;
+  color: #6366f1 !important;
 }
 
 .rbc-toolbar button.rbc-active {
-  background-color: #dbdafe !important;
+  background: #6366f1 !important;
+  color: #ffffff !important;
+
   box-shadow: none !important;
 }
 
 .rbc-time-view {
-  border-color: #eee !important;
+  border: 1px solid #eeeeee !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  background: #ffffff !important;
 }
 
 .rbc-time-header {
+  display: flex !important;
+  min-height: 70px !important;
+  border-bottom: 1px solid #eeeeee !important;
+  background: #ffffff !important;
+}
+
+
+/* Left empty area above time gutter */
+
+.rbc-time-header-gutter {
+  flex: 0 0 88px !important;
+  width: 88px !important;
+  min-width: 88px !important;
+  border-right: 1px solid #eeeeee !important;
+
+  background: #ffffff !important;
+}
+
+
+/* Date header area */
+
+.rbc-time-header-content {
+  flex: 1 !important;
+  border-left: none !important;
+}
+
+
+/* =========================================================
+   DATE HEADER
+========================================================= */
+
+.rbc-header {
+  height: 70px !important;
+  padding: 0 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-left: 1px solid #eeeeee !important;
+  border-bottom: none !important;
+  background: #ffffff !important;
+  color: #374151 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+.rbc-header:first-child {
+  border-left: none !important;
+}
+
+.rbc-header a {
+  color: #374151 !important;
+  text-decoration: none !important;
+}
+
+
+/* =========================================================
+   TIME GUTTER
+========================================================= */
+
+.rbc-time-gutter.rbc-time-column {
+  flex: 0 0 88px !important;
+  width: 88px !important;
+  min-width: 88px !important;
+  font-size: 12px !important;
+  color: #6b7280 !important;
+  background: #ffffff !important;
+  border-right: 1px solid #eeeeee !important;
+}
+
+
+/* Time labels */
+
+.rbc-time-gutter.rbc-time-column
+.rbc-timeslot-group {
+  padding: 0 !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+}
+
+
+/* Actual time text */
+
+.rbc-label {
+  padding: 7px 8px !important;
+  color: #6b7280 !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  white-space: nowrap !important;
+}
+
+
+/* =========================================================
+   TIME CONTENT
+========================================================= */
+
+.rbc-time-content {
+  display: flex !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  overflow-y: auto !important;
+}
+
+
+/* =========================================================
+   TIME SLOTS
+========================================================= */
+
+.rbc-timeslot-group {
+  min-height: 60px !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid #eeeeee !important;
+}
+
+
+/* Day columns */
+
+.rbc-day-slot {
+  border-left: 1px solid #eeeeee !important;
+  background: #ffffff !important;
+}
+
+
+/* First day column */
+
+.rbc-day-slot:first-child {
+  border-left: none !important;
+}
+
+
+/* Horizontal grid */
+
+.rbc-day-slot .rbc-time-slot {
+  border-top: 1px solid #f5f5f5 !important;
+}
+
+
+/* =========================================================
+   TODAY
+========================================================= */
+
+.rbc-today {
+  background: #fcfcff !important;
+}
+
+
+/* =========================================================
+   EVENT CARD
+========================================================= */
+.rbc-events-container{
+  margin:0 !important
+}
+.rbc-event {
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: 60px !important;
+  border: 1px solid rgba(0, 0, 0, 0.03) !important;
+  border-radius: 8px !important;
+  color: #111827 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+
+/* =========================================================
+   REMOVE HOVER EFFECT
+========================================================= */
+
+.rbc-event:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.rbc-event:focus {
+  outline: none !important;
+
+  box-shadow: none !important;
+}
+
+
+/* =========================================================
+   EVENT CONTENT
+========================================================= */
+
+.rbc-event-content {
+  width: 100% !important;
+
+  height: 100% !important;
+
+  min-height: 60px !important;
+
+  overflow: visible !important;
+
+  text-overflow: unset !important;
+
+  white-space: normal !important;
+}
+
+
+/* =========================================================
+   CUSTOM EVENT
+========================================================= */
+
+.custom-event {
+  width: 100% !important;
+
+  height: 100% !important;
+
+  min-height: 55px !important;
+
+  padding: 8px 6px !important;
+
+  display: flex !important;
+
+  flex-direction: column !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  text-align: center !important;
+
+  gap: 5px !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   EVENT TIME
+========================================================= */
+
+.custom-event-time {
+  display: block !important;
+
+  margin: 0 !important;
+
+  padding: 0 !important;
+
+  font-size: 11px !important;
+
+  font-weight: 400 !important;
+
+  line-height: 1.2 !important;
+
+  color: #374151 !important;
+
+  white-space: nowrap !important;
+}
+
+
+/* =========================================================
+   EVENT SUBJECT
+========================================================= */
+
+.custom-event-title {
+  display: block !important;
+
+  margin: 0 !important;
+
+  padding: 0 !important;
+
+  font-size: 14px !important;
+
+  font-weight: 700 !important;
+
+  line-height: 1.25 !important;
+
+  color: #111827 !important;
+
+  white-space: nowrap !important;
+
+  overflow: hidden !important;
+
+  text-overflow: ellipsis !important;
+
+  max-width: 100% !important;
+}
+
+
+/* =========================================================
+   HIDE DEFAULT RBC EVENT TIME
+========================================================= */
+
+.rbc-event-label {
   display: none !important;
 }
 
-.rbc-time-content {
-  border: none !important;
+
+/* =========================================================
+   EVENT COLORS
+   These work with eventPropGetter
+========================================================= */
+
+.event-math {
+  background: #e9f6ff !important;
 }
 
-.rbc-time-gutter.rbc-time-column {
-  font-size: 12px
+.event-english {
+  background: #fff9dc !important;
 }
 
-.rbc-time-gutter.rbc-time-column .rbc-timeslot-group {
-  padding: 0px 20px !important
+.event-biology {
+  background: #f2eaff !important;
 }
 
-.rbc-timeslot-group {
-  background-color: #f7fdff !important
+.event-physics {
+  background: #ffeaf2 !important;
 }
 
-.rbc-day-slot {
-  font-size: 14px !important
+.event-chemistry {
+  background: #e8f8ed !important;
 }
 
-.rbc-event {
-  border: none !important;
-  color: black !important;
-  width: 100% !important;
-  display:flex !important;
-  flex-wrap:wrap !important
+.event-history {
+  background: #fff0df !important;
 }
 
-.rbc-event:nth-child(1) {
-  background-color: #e2f8ff !important;
+
+/* =========================================================
+   CURRENT TIME INDICATOR
+========================================================= */
+
+.rbc-current-time-indicator {
+  height: 2px !important;
+
+  background: #6366f1 !important;
+
+  opacity: 0.7 !important;
 }
 
-.rbc-event:nth-child(1) {
-  background-color: #e2fBff !important;
+
+/* =========================================================
+   SELECTED EVENT
+========================================================= */
+
+.rbc-event.rbc-selected {
+  box-shadow:
+    0 0 0 2px #6366f1 !important;
 }
 
-.rbc-event:nth-child(2) {
-  background-color: #fefce8 !important;
+
+/* =========================================================
+   OFF RANGE
+========================================================= */
+
+.rbc-off-range {
+  color: #c4c4c4 !important;
 }
 
-.rbc-event:nth-child(3) {
-  background-color: #f2f1ff !important;
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.rbc-time-content::-webkit-scrollbar {
+  width: 5px !important;
 }
 
-.rbc-event:nth-child(4) {
-  background-color: #fdf2fb !important;
+.rbc-time-content::-webkit-scrollbar-track {
+  background: transparent !important;
 }
 
-.rbc-event:nth-child(5) {
-  background-color: #e2f8ff !important;
+.rbc-time-content::-webkit-scrollbar-thumb {
+  background: #e5e7eb !important;
+
+  border-radius: 10px !important;
 }
 
-.rbc-event:nth-child(6) {
-  background-color: #fefce8 !important;
-}
 
-.rbc-event:nth-child(7) {
-  background-color: #f2f1ff !important;
-}
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
-.rbc-event:nth-child(8) {
-  background-color: #fdf2fb !important;
-}
+@media (max-width: 768px) {
 
-.rbc-event-label{
-color:gray !important;
-margin-bottom:5px !important
+  .rbc-time-header-gutter {
+    flex-basis: 65px !important;
+
+    width: 65px !important;
+
+    min-width: 65px !important;
+  }
+
+  .rbc-time-gutter.rbc-time-column {
+    flex-basis: 65px !important;
+
+    width: 65px !important;
+
+    min-width: 65px !important;
+  }
+
+  .rbc-header {
+    height: 60px !important;
+
+    font-size: 11px !important;
+  }
+
+  .rbc-event {
+    margin: 4px !important;
+
+    width: calc(100% - 8px) !important;
+
+    border-radius: 7px !important;
+  }
+
+  .custom-event {
+    min-height: 100% !important;
+    padding: 6px 4px !important;
+    gap: 4px !important;
+  }
+
+  .custom-event-time {
+    font-size: 9px !important;
+  }
+
+  .custom-event-title {
+    font-size: 11px !important;
+  }
+}
+.rbc-allday-cell{
+  display:none !important
 }
