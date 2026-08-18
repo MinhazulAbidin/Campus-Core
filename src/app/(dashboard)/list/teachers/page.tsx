@@ -1,8 +1,44 @@
 import Pagination from "@/components/Pagination";
+import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
 import Image from "next/image";
 import React from "react";
 
+const columns = [
+  {
+    header: "Info",
+    accessor: "info",
+  },
+  {
+    header: "Teacher ID",
+    accessor: "teacherId",
+    className: "hidden md:table-cell",
+  },
+  {
+    header: "Subjects",
+    accessor: "subjects",
+    className: "hidden md:table-cell",
+  },
+  {
+    header: "Classes",
+    accessor: "classes",
+    className: "hidden md:table-cell",
+  },
+  {
+    header: "Phone",
+    accessor: "phone",
+    className: "hidden md:table-cell",
+  },
+  {
+    header: "Address",
+    accessor: "address",
+    className: "hidden md:table-cell",
+  },
+  {
+    header: "Actions",
+    accessor: "actions",
+  },
+];
 const TeachersListPage = () => {
   return (
     <section className="bg-white flex-1 p-4 m-4 mt-0 rounded-md">
@@ -25,7 +61,9 @@ const TeachersListPage = () => {
         </div>
       </div>
       {/* list  */}
-      <div></div>
+      <div>
+        <Table columns={columns} />
+      </div>
       {/* pagination  */}
       <div>
         <Pagination />
