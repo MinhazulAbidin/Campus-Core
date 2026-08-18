@@ -8,7 +8,7 @@ const TeachersPage = () => {
       {/* left */}
       <div className="w-full xl:w-2/3 flex flex-col gap-8">
         <div className="bg-white h-full rounded-md p-4">
-          <h2 className="text-xl font-semibold">Schedule (4A)</h2>
+          <h2 className="text-xl font-semibold">Schedule</h2>
           <BigCalender />
         </div>
       </div>
