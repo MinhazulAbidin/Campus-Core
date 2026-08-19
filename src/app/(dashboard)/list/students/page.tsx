@@ -80,12 +80,12 @@ const StudentsListPage = () => {
       <td className="px-6 py-3">
         <div className="flex items-center gap-2">
           <Link href={`/list/teachers/${item?.id}`}>
-            <button className="w-7 h-7 rounded-full bg-lamaSky flex items-center justify-center">
+            <button className="w-7 h-7 rounded-full bg-lamaSky flex items-center justify-center cursor-pointer">
               <Image src="/view.png" alt="view" width={16} height={16} />
             </button>
           </Link>
           {String(role) === "admin" && (
-            <button className="w-7 h-7 rounded-full bg-lamaPurple flex items-center justify-center">
+            <button className="w-7 h-7 rounded-full bg-lamaPurple flex items-center justify-center cursor-pointer">
               <Image src="/delete.png" alt="view" width={16} height={16} />
             </button>
           )}

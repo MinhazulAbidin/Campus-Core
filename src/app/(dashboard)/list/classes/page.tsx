@@ -1,86 +1,54 @@
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
-import { role, teachersData } from "@/lib/data";
+import { classesData, role } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-type Teacher = {
+type Classes = {
   id: number;
-  teacherId: string;
-  subjects: string[];
-  classes: string[];
-  phone: string;
-  address: string;
-  photo: string;
-  email?: string;
   name: string;
+  capacity: number;
+  grade: number;
+  supervisor: string;
 };
 
 const columns = [
   {
-    header: "Info",
-    accessor: "info",
+    header: "Class Name",
+    accessor: "name",
   },
   {
-    header: "Teacher ID",
-    accessor: "teacherId",
+    header: "Capacity",
+    accessor: "capacity",
     className: "hidden md:table-cell",
   },
   {
-    header: "Subjects",
-    accessor: "subjects",
+    header: "Grade",
+    accessor: "grade",
     className: "hidden md:table-cell",
   },
   {
-    header: "Classes",
-    accessor: "classes",
+    header: "Supervisor",
+    accessor: "supervisor",
     className: "hidden md:table-cell",
-  },
-  {
-    header: "Phone",
-    accessor: "phone",
-    className: "hidden md:table-cell",
-  },
-  {
-    header: "Address",
-    accessor: "address",
-    className: "hidden md:table-cell",
-  },
-  {
-    header: "Actions",
-    accessor: "actions",
-  },
+  }
 ];
 const TeachersListPage = () => {
-  const renderRow = (item: Teacher) => (
+  const renderRow = (item: Classes) => (
     <tr
       key={item?.id}
       className="border-b border-gray-200 even:bg-slate-50 hover:bg-lamaPurpleLight duration-150 text-sm"
     >
       <td className="flex items-center gap-4 px-6 py-3">
-        <Image
-          src={item?.photo}
-          alt={item?.name}
-          width={50}
-          height={50}
-          className="md:hidden xl:block rounded-full w-10 h-10 object-cover"
-        />
         <div className="flext flex-col gap-2">
           <h2 className="font-semibold ">{item?.name}</h2>
-          <p className="text-sm text-gray-400">{item?.email}</p>
         </div>
       </td>
-      <td className="hidden md:table-cell px-6 py-3">{item?.teacherId}</td>
-      <td className="hidden md:table-cell px-6 py-3">
-        {item?.subjects.join(", ")}
-      </td>
-      <td className="hidden md:table-cell px-6 py-3">
-        {item?.classes.join(", ")}
-      </td>
-      <td className="hidden md:table-cell px-6 py-3">{item?.phone}</td>
-      <td className="hidden md:table-cell px-6 py-3">{item?.address}</td>
+      <td className="hidden md:table-cell px-6 py-3">{item?.capacity}</td>
+      <td className="hidden md:table-cell px-6 py-3">{item?.grade}</td>
+      <td className="hidden md:table-cell px-6 py-3">{item?.supervisor}</td>
       <td className="px-6 py-3">
         <div className="flex items-center gap-2">
           <Link href={`/list/teachers/${item?.id}`}>
@@ -120,7 +88,7 @@ const TeachersListPage = () => {
       </div>
       {/* list  */}
       <div>
-        <Table columns={columns} randerRow={renderRow} data={teachersData} />
+        <Table columns={columns} randerRow={renderRow} data={classesData} />
       </div>
       {/* pagination  */}
       <div>
