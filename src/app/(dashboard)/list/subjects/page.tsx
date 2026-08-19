@@ -43,7 +43,7 @@ const SubjectsListPage = () => {
         <div className="flex items-center gap-2">
           <Link href={`/list/teachers/${item?.id}`}>
             <button className="w-7 h-7 rounded-full bg-lamaSky flex items-center justify-center cursor-pointer">
-              <Image src="/view.png" alt="view" width={16} height={16} />
+              <Image src="/edit.png" alt="view" width={16} height={16} />
             </button>
           </Link>
           {String(role) === "admin" && (
@@ -60,7 +60,7 @@ const SubjectsListPage = () => {
     <section className="bg-white flex-1 p-4 m-4 mt-0 rounded-md w-full">
       {/* top  */}
       <div className="flex items-center justify-between">
-        <h2 className="text-lg font-semibold hidden md:block">All Students</h2>
+        <h2 className="text-lg font-semibold hidden md:block">Subjects</h2>
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
           <TableSearch />
           <div className="flex items-center gap-4 self-end ">

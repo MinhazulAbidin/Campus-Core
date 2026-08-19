@@ -1,54 +1,47 @@
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
-import { classesData, role } from "@/lib/data";
+import { lessonsData, role } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-type Classes = {
+type Lessons = {
   id: number;
-  name: string;
-  capacity: number;
-  grade: number;
-  supervisor: string;
+  subject: string;
+  class: string;
+  teacher: string;
 };
 
 const columns = [
   {
-    header: "Class Name",
-    accessor: "name",
+    header: "Subject Name",
+    accessor: "subject",
   },
   {
-    header: "Capacity",
-    accessor: "capacity",
+    header: "Class",
+    accessor: "class",
     className: "hidden md:table-cell",
   },
   {
-    header: "Grade",
-    accessor: "grade",
-    className: "hidden md:table-cell",
-  },
-  {
-    header: "Supervisor",
-    accessor: "supervisor",
+    header: "Teacher Name",
+    accessor: "teacher",
     className: "hidden md:table-cell",
   }
 ];
-const TeachersListPage = () => {
-  const renderRow = (item: Classes) => (
+const LessonsListPage = () => {
+  const renderRow = (item: Lessons) => (
     <tr
       key={item?.id}
       className="border-b border-gray-200 even:bg-slate-50 hover:bg-lamaPurpleLight duration-150 text-sm"
     >
       <td className="flex items-center gap-4 px-6 py-3">
         <div className="flext flex-col gap-2">
-          <h2 className="font-semibold ">{item?.name}</h2>
+          <h2 className="font-semibold ">{item?.subject}</h2>
         </div>
       </td>
-      <td className="hidden md:table-cell px-6 py-3">{item?.capacity}</td>
-      <td className="hidden md:table-cell px-6 py-3">{item?.grade}</td>
-      <td className="hidden md:table-cell px-6 py-3">{item?.supervisor}</td>
+      <td className="hidden md:table-cell px-6 py-3">{item?.class}</td>
+      <td className="hidden md:table-cell px-6 py-3">{item?.teacher}</td>
       <td className="px-6 py-3">
         <div className="flex items-center gap-2">
           <Link href={`/list/teachers/${item?.id}`}>
@@ -70,7 +63,7 @@ const TeachersListPage = () => {
     <section className="bg-white flex-1 p-4 m-4 mt-0 rounded-md">
       {/* top  */}
       <div className="flex items-center justify-between">
-        <h2 className="text-lg font-semibold hidden md:block">Classes</h2>
+        <h2 className="text-lg font-semibold hidden md:block">Lessons</h2>
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
           <TableSearch />
           <div className="flex items-center gap-4 self-end ">
@@ -88,7 +81,7 @@ const TeachersListPage = () => {
       </div>
       {/* list  */}
       <div>
-        <Table columns={columns} randerRow={renderRow} data={classesData} />
+        <Table columns={columns} randerRow={renderRow} data={lessonsData} />
       </div>
       {/* pagination  */}
       <div>
@@ -98,4 +91,4 @@ const TeachersListPage = () => {
   );
 };
 
-export default TeachersListPage;
+export default LessonsListPage;
