@@ -27,6 +27,10 @@ const columns = [
     header: "Teacher Name",
     accessor: "teacher",
     className: "hidden md:table-cell",
+  },
+  {
+    header: "Actions",
+    accessor: "actions",
   }
 ];
 const LessonsListPage = () => {
