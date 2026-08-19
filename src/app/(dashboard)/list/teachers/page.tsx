@@ -55,8 +55,11 @@ const columns = [
 ];
 const TeachersListPage = () => {
   const renderRow = (item: Teacher) => (
-    <tr key={item?.id} className="border-b border-gray-200 even:bg-slate-50 hover:bg-lamaPurpleLight duration-150 text-sm">
-      <td className="flex items-center gap-4 p-4">
+    <tr
+      key={item?.id}
+      className="border-b border-gray-200 even:bg-slate-50 hover:bg-lamaPurpleLight duration-150 text-sm"
+    >
+      <td className="flex items-center gap-4 px-6 py-3">
         <Image
           src={item?.photo}
           alt={item?.name}
@@ -69,19 +72,23 @@ const TeachersListPage = () => {
           <p className="text-sm text-gray-400">{item?.email}</p>
         </div>
       </td>
-      <td className="hidden md:table-cell">{item?.teacherId}</td>
-      <td className="hidden md:table-cell">{item?.subjects.join(",")}</td>
-      <td className="hidden md:table-cell">{item?.classes.join(",")}</td>
-      <td className="hidden md:table-cell">{item?.phone}</td>
-      <td className="hidden md:table-cell">{item?.address}</td>
-      <td>
+      <td className="hidden md:table-cell px-6 py-3">{item?.teacherId}</td>
+      <td className="hidden md:table-cell px-6 py-3">
+        {item?.subjects.join(", ")}
+      </td>
+      <td className="hidden md:table-cell px-6 py-3">
+        {item?.classes.join(", ")}
+      </td>
+      <td className="hidden md:table-cell px-6 py-3">{item?.phone}</td>
+      <td className="hidden md:table-cell px-6 py-3">{item?.address}</td>
+      <td className="px-6 py-3">
         <div className="flex items-center gap-2">
           <Link href={`/list/teachers/${item?.id}`}>
             <button className="w-7 h-7 rounded-full bg-lamaSky flex items-center justify-center">
               <Image src="/view.png" alt="view" width={16} height={16} />
             </button>
           </Link>
-          {role === "admin" && (
+          {String(role) === "admin" && (
             <button className="w-7 h-7 rounded-full bg-lamaPurple flex items-center justify-center">
               <Image src="/delete.png" alt="view" width={16} height={16} />
             </button>
