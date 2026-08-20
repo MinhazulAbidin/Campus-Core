@@ -139,6 +139,9 @@
   flex: 1 !important;
   border-left: none !important;
 }
+.rbc-time-header.rbc-overflowing{
+  margin-right: 0!important;
+}
 
 
 /* =========================================================
@@ -192,9 +195,10 @@
 .rbc-timeslot-group {
   padding: 0 !important;
   display: flex !important;
-  align-items: flex-start !important;
+  align-items: center !important;
   justify-content: center !important;
-}
+  /* border-bottom: 1px solid #eeeeee !important; */
+} 
 
 
 /* Actual time text */
@@ -228,14 +232,13 @@
 .rbc-timeslot-group {
   min-height: 60px !important;
   background: #ffffff !important;
-  border-bottom: 1px solid #eeeeee !important;
+
 }
 
 
 /* Day columns */
 
 .rbc-day-slot {
-  border-left: 1px solid #eeeeee !important;
   background: #ffffff !important;
 }
 

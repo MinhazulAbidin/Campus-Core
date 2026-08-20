@@ -1,4 +1,7 @@
+import Announcements from "@/components/Announcements";
+import BigCalender from "@/components/BigCalender";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const SingleTeacherPage = () => {
@@ -46,14 +49,15 @@ const SingleTeacherPage = () => {
             </div>
           </div>
           {/* small card */}
-          <div className="flex-1 flex flex-wrap gap-4 justify-between">
+          <div className="flex-1 flex flex-wrap gap-2 justify-between">
             {/* card */}
-            <div className="bg-white p-4 w-full md:w-[48%] rounded-md xl:w-[45%] 2xl:w-[48%]">
+            <div className="bg-white p-4 w-full md:w-[48%] rounded-md xl:w-[45%] 2xl:w-[48%] flex gap-4 ">
               <Image
                 src="/singleAttendance.png"
                 alt=""
                 width={24}
                 height={24}
+                className="h-6 w-6"
               />
               <div>
                 <h3 className="text-xl font-semibold">90%</h3>
@@ -61,20 +65,27 @@ const SingleTeacherPage = () => {
               </div>
             </div>
             {/* card */}
-            <div className="bg-white p-4 w-full md:w-[48%] rounded-md xl:w-[45%] 2xl:w-[48%]">
-              <Image src="/singleBranch.png" alt="" width={24} height={24} />
+            <div className="bg-white p-4 w-full md:w-[48%] rounded-md xl:w-[45%] 2xl:w-[48%] flex gap-4">
+              <Image
+                src="/singleBranch.png"
+                alt=""
+                width={24}
+                height={24}
+                className="h-6 w-6"
+              />
               <div>
                 <h3 className="text-xl font-semibold">2</h3>
                 <span className="text-sm text-gray-400">Branches</span>
               </div>
             </div>
             {/* card */}
-            <div className="bg-white p-4 w-full md:w-[48%] rounded-md xl:w-[45%] 2xl:w-[48%]">
+            <div className="bg-white p-4 w-full md:w-[48%] rounded-md xl:w-[45%] 2xl:w-[48%] flex gap-4">
               <Image
                 src="/singleLesson.png"
                 alt=""
                 width={24}
                 height={24}
+                className="h-6 w-6"
               />
               <div>
                 <h3 className="text-xl font-semibold">6</h3>
@@ -82,12 +93,13 @@ const SingleTeacherPage = () => {
               </div>
             </div>
             {/* card */}
-            <div className="bg-white p-4 w-full md:w-[48%] rounded-md xl:w-[45%] 2xl:w-[48%]">
+            <div className="bg-white p-4 w-full md:w-[48%] rounded-md xl:w-[45%] 2xl:w-[48%] flex gap-4">
               <Image
                 src="/singleClass.png"
                 alt=""
                 width={24}
                 height={24}
+                className="h-6 w-6"
               />
               <div>
                 <h3 className="text-xl font-semibold">6</h3>
@@ -97,10 +109,50 @@ const SingleTeacherPage = () => {
           </div>
         </div>
         {/* bottom section  */}
-        <div>calender</div>
+        <div className="mt-4 bg-white rounded-md p-4 h-200">
+          <h2>Teacher's Schedule</h2>
+          <BigCalender />
+        </div>
       </div>
       {/* right  */}
-      <div className="w-full xl:w-1/3"> right</div>
+      <div className="w-full xl:w-1/3 space-y-4">
+        <div className="bg-white rounded-md p-4">
+          <h2 className="text-xl font-semibold">Shortcuts</h2>
+          <div className="mt-4 flex gap-4 flex-wrap text-gray-500 text-xs">
+            <Link
+              className="hover:shadow-md duration-200 p-3 rounded-md bg-lamaSkyLight"
+              href="/"
+            >
+              Teacher's Clesses
+            </Link>
+            <Link
+              className="hover:shadow-md duration-200 p-3 rounded-md bg-lamaPurpleLight"
+              href="/"
+            >
+              Teacher's Students
+            </Link>
+            <Link
+              className="hover:shadow-md duration-200 p-3 rounded-md bg-lamaYellowLight"
+              href="/"
+            >
+              Teacher's Lessons
+            </Link>
+            <Link
+              className="hover:shadow-md duration-200 p-3 rounded-md bg-pink-50"
+              href="/"
+            >
+              Teacher's Exams
+            </Link>
+            <Link
+              className="hover:shadow-md duration-200 p-3 rounded-md bg-lamaSkyLight"
+              href="/"
+            >
+              Teacher's Accnouncements
+            </Link>
+          </div>
+        </div>
+        <Announcements />
+      </div>
     </section>
   );
 };

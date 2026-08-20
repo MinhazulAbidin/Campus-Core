@@ -27,7 +27,11 @@ const BigCalender = () => {
     };
   };
 
-  const CustomEvent = ({ event }: { event: { start: Date | string; title?: string | number } }) => {
+  const CustomEvent = ({
+    event,
+  }: {
+    event: { start: Date | string; title?: string | number };
+  }) => {
     const time = new Date(event.start).toLocaleTimeString("en-US", {
       hour: "numeric",
       minute: "2-digit",
@@ -43,22 +47,20 @@ const BigCalender = () => {
   };
 
   return (
-    <div>
-      <Calendar
-        localizer={localizer}
-        events={calendarEvents}
-        startAccessor="start"
-        endAccessor="end"
-        views={["work_week", "day"]}
-        view={view}
-        onView={handleViewChange}
-        style={{ height: "98%" }}
-        eventPropGetter={eventPropGetter}
-        components={{
-          event: CustomEvent,
-        }}
-      />
-    </div>
+    <Calendar
+      localizer={localizer}
+      events={calendarEvents}
+      startAccessor="start"
+      endAccessor="end"
+      views={["work_week", "day"]}
+      view={view}
+      onView={handleViewChange}
+      style={{ height: "98%" }}
+      eventPropGetter={eventPropGetter}
+      components={{
+        event: CustomEvent,
+      }}
+    />
   );
 };
 
