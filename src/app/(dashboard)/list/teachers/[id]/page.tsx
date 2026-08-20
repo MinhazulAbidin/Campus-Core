@@ -1,5 +1,6 @@
 import Announcements from "@/components/Announcements";
 import BigCalender from "@/components/BigCalender";
+import Parformance from "@/components/Parformance";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -151,6 +152,7 @@ const SingleTeacherPage = () => {
             </Link>
           </div>
         </div>
+        <Parformance />
         <Announcements />
       </div>
     </section>
