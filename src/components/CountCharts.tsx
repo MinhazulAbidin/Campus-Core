@@ -31,27 +31,35 @@ const CountCharts = () => {
   const girls = data.find((item) => item.name === "Girls")?.count ?? 0;
   const total = data.find((item) => item.name === "Total")?.count ?? 0;
 
-  const boysPercentage = Math.round((boys / (boys + girls)) * 100);
-  const girlsPercentage = Math.round((girls / (boys + girls)) * 100);
+  const boysPercentage = Math.round(
+    (boys / (boys + girls)) * 100
+  );
+
+  const girlsPercentage = Math.round(
+    (girls / (boys + girls)) * 100
+  );
 
   return (
     <div
       className="
         w-full
         h-full
+        min-h-[420px]
         rounded-2xl
         border
         border-gray-100
         bg-white
         p-5
         shadow-[0_2px_12px_rgba(0,0,0,0.03)]
+        flex
+        flex-col
       "
     >
       {/* =====================================================
           HEADER
       ===================================================== */}
 
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between shrink-0">
 
         <div>
           <h2 className="text-lg font-semibold text-gray-900">
@@ -69,6 +77,7 @@ const CountCharts = () => {
             flex
             h-8
             w-8
+            shrink-0
             items-center
             justify-center
             rounded-lg
@@ -84,28 +93,30 @@ const CountCharts = () => {
             height={18}
           />
         </button>
-
       </div>
 
 
       {/* =====================================================
-          CHART
+          CHART AREA
+          flex-1 means height will grow/shrink automatically
       ===================================================== */}
 
-      <div className="relative mt-2 h-[230px] w-full">
+      <div className="relative flex-1 min-h-[230px] w-full">
 
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer
+          width="100%"
+          height="100%"
+        >
           <RadialBarChart
             cx="50%"
             cy="50%"
             innerRadius="48%"
-            outerRadius="88%"
+            outerRadius="82%"
             barSize={22}
             data={data}
             startAngle={90}
             endAngle={-270}
           >
-
             <RadialBar
               background={{
                 fill: "#f7f7f8",
@@ -113,14 +124,11 @@ const CountCharts = () => {
               dataKey="count"
               cornerRadius={10}
             />
-
           </RadialBarChart>
         </ResponsiveContainer>
 
 
-        {/* =================================================
-            CENTER CONTENT
-        ================================================= */}
+        {/* CENTER */}
 
         <div
           className="
@@ -135,16 +143,23 @@ const CountCharts = () => {
             justify-center
           "
         >
-
-          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#f7faff]">
-
+          <div
+            className="
+              flex
+              h-11
+              w-11
+              items-center
+              justify-center
+              rounded-full
+              bg-[#f7faff]
+            "
+          >
             <Image
               src="/maleFemale.png"
               alt="Students"
               width={28}
               height={28}
             />
-
           </div>
 
           <h1 className="mt-2 text-2xl font-bold text-gray-900">
@@ -154,21 +169,18 @@ const CountCharts = () => {
           <span className="text-[10px] font-medium text-gray-400">
             Total Students
           </span>
-
         </div>
-
       </div>
 
 
       {/* =====================================================
           STATS
+          shrink-0 keeps stats at bottom
       ===================================================== */}
 
-      <div className="grid grid-cols-2 gap-3 mt-1">
+      <div className="grid grid-cols-2 gap-3 shrink-0">
 
-        {/* =================================================
-            BOYS
-        ================================================= */}
+        {/* BOYS */}
 
         <div
           className="
@@ -179,7 +191,6 @@ const CountCharts = () => {
             hover:shadow-sm
           "
         >
-
           <div className="flex items-center gap-2">
 
             <div className="h-2.5 w-2.5 rounded-full bg-[#c3ebfa]" />
@@ -202,18 +213,25 @@ const CountCharts = () => {
               </p>
             </div>
 
-            <span className="rounded-full bg-white px-2 py-1 text-[10px] font-semibold text-sky-500">
+            <span
+              className="
+                rounded-full
+                bg-white
+                px-2
+                py-1
+                text-[10px]
+                font-semibold
+                text-sky-500
+              "
+            >
               {boysPercentage}%
             </span>
 
           </div>
-
         </div>
 
 
-        {/* =================================================
-            GIRLS
-        ================================================= */}
+        {/* GIRLS */}
 
         <div
           className="
@@ -224,7 +242,6 @@ const CountCharts = () => {
             hover:shadow-sm
           "
         >
-
           <div className="flex items-center gap-2">
 
             <div className="h-2.5 w-2.5 rounded-full bg-[#fae27c]" />
@@ -247,16 +264,24 @@ const CountCharts = () => {
               </p>
             </div>
 
-            <span className="rounded-full bg-white px-2 py-1 text-[10px] font-semibold text-amber-500">
+            <span
+              className="
+                rounded-full
+                bg-white
+                px-2
+                py-1
+                text-[10px]
+                font-semibold
+                text-amber-500
+              "
+            >
               {girlsPercentage}%
             </span>
 
           </div>
-
         </div>
 
       </div>
-
     </div>
   );
 };
