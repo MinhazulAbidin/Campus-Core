@@ -1,3 +1,4 @@
+import FromModal from "@/components/FromModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -83,15 +84,15 @@ const TeachersListPage = () => {
       <td className="hidden md:table-cell px-6 py-3">{item?.address}</td>
       <td className="px-6 py-3">
         <div className="flex items-center gap-2">
-          <Link href={`/list/teachers/${item?.id}`}>
-            <button className="w-7 h-7 rounded-full bg-lamaSky flex items-center justify-center cursor-pointer">
-              <Image src="/view.png" alt="view" width={16} height={16} />
-            </button>
-          </Link>
           {String(role) === "admin" && (
-            <button className="w-7 h-7 rounded-full bg-lamaPurple flex items-center justify-center cursor-pointer">
-              <Image src="/delete.png" alt="view" width={16} height={16} />
-            </button>
+            <>
+              <Link href={`/list/teachers/${item?.id}`}>
+                <button className="w-7 h-7 rounded-full bg-lamaSky flex items-center justify-center cursor-pointer">
+                  <Image src="/view.png" alt="view" width={16} height={16} />
+                </button>
+              </Link>
+              <FromModal table="teacher" type="delete" id={item?.id} />
+            </>
           )}
         </div>
       </td>
@@ -112,9 +113,7 @@ const TeachersListPage = () => {
             <button className="bg-lamaYellow p-2 rounded-full w-8 h-8">
               <Image src="/sort.png" alt="sort" width={20} height={20} />
             </button>
-            <button className="bg-lamaYellow p-2 rounded-full w-8 h-8">
-              <Image src="/plus.png" alt="plus" width={20} height={20} />
-            </button>
+            {role === "admin" && <FromModal table="teacher" type="create" />}
           </div>
         </div>
       </div>

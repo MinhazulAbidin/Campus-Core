@@ -111,7 +111,7 @@ const EventCalander = () => {
                 overflow-hidden
                 transition-all
                 duration-200
-                hover:-translate-y-[1px]
+                hover:-translate-y-px
                 hover:shadow-sm
               `}
             >

@@ -8,27 +8,16 @@ import React from "react";
 const SingleTeacherPage = () => {
   return (
     <section className="flex flex-col xl:flex-row gap-5 p-4 md:p-5 bg-[#f8f9fc]">
-
       {/* =====================================================
           LEFT CONTENT
       ===================================================== */}
-
       <div className="w-full xl:w-2/3 space-y-5">
-
-        {/* =================================================
-            TOP SECTION
-        ================================================= */}
-
         <div className="flex flex-col lg:flex-row gap-5">
-
-          {/* =================================================
-              TEACHER PROFILE
-          ================================================= */}
 
           <div className="flex-1 bg-white rounded-2xl border border-gray-100 shadow-[0_2px_12px_rgba(0,0,0,0.03)] overflow-hidden">
 
             {/* Cover */}
-            <div className="h-20 bg-gradient-to-r from-[#e8f7ff] via-[#f3f0ff] to-[#fff5fb]" />
+            <div className="h-20 bg-linear-to-r from-[#e8f7ff] via-[#f3f0ff] to-[#fff5fb]" />
 
             <div className="px-5 pb-5">
 
@@ -42,36 +31,25 @@ const SingleTeacherPage = () => {
                     alt="Teacher"
                     width={90}
                     height={90}
-                    className="w-[90px] h-[90px] rounded-2xl object-cover border-4 border-white shadow-md"
+                    className="w-22.5 h-22.5 rounded-2xl object-cover border-4 border-white shadow-md"
                   />
-
                   {/* Online */}
                   <span className="absolute bottom-1 right-1 w-3.5 h-3.5 bg-emerald-500 border-2 border-white rounded-full" />
-
                 </div>
-
                 <div className="pb-1">
-
                   <h2 className="text-lg md:text-xl font-semibold text-gray-900">
                     Donald Trump
                   </h2>
-
                   <p className="text-xs text-gray-400 mt-0.5">
                     Senior Teacher · Mathematics
                   </p>
-
                 </div>
-
               </div>
-
-
               {/* Description */}
               <p className="text-xs md:text-sm text-gray-500 leading-5 mt-5">
                 Experienced educator dedicated to creating an engaging,
                 supportive and productive learning environment for students.
               </p>
-
-
               {/* Teacher information */}
               <div className="grid grid-cols-2 gap-3 mt-5">
 
@@ -354,7 +332,7 @@ const SingleTeacherPage = () => {
 
 
           {/* Calendar */}
-          <div className="p-3 md:p-4 overflow-hidden h-[800px]">
+          <div className="p-3 md:p-4 overflow-hidden h-200">
             <BigCalender />
           </div>
 

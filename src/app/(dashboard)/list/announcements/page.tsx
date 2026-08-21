@@ -1,3 +1,4 @@
+import FromModal from "@/components/FromModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -31,7 +32,7 @@ const columns = [
   {
     header: "Actions",
     accessor: "actions",
-  }
+  },
 ];
 const AnnouncementsListPage = () => {
   const renderRow = (item: Announcements) => (
@@ -48,15 +49,11 @@ const AnnouncementsListPage = () => {
       <td className="hidden md:table-cell px-6 py-3">{item?.date}</td>
       <td className="px-6 py-3">
         <div className="flex items-center gap-2">
-          <Link href={`/list/teachers/${item?.id}`}>
-            <button className="w-7 h-7 rounded-full bg-lamaSky flex items-center justify-center cursor-pointer">
-              <Image src="/edit.png" alt="view" width={16} height={16} />
-            </button>
-          </Link>
-          {String(role) === "admin" && (
-            <button className="w-7 h-7 rounded-full bg-lamaPurple flex items-center justify-center cursor-pointer">
-              <Image src="/delete.png" alt="view" width={16} height={16} />
-            </button>
+          {role === "admin" && (
+            <>
+              <FromModal table="announcement" type="update" data={item} />
+              <FromModal table="announcement" type="delete" id={item?.id} />
+            </>
           )}
         </div>
       </td>
@@ -77,15 +74,19 @@ const AnnouncementsListPage = () => {
             <button className="bg-lamaYellow p-2 rounded-full w-8 h-8">
               <Image src="/sort.png" alt="sort" width={20} height={20} />
             </button>
-            <button className="bg-lamaYellow p-2 rounded-full w-8 h-8">
-              <Image src="/plus.png" alt="plus" width={20} height={20} />
-            </button>
+            {role === "admin" && (
+              <FromModal table="announcement" type="create" />
+            )}
           </div>
         </div>
       </div>
       {/* list  */}
       <div>
-        <Table columns={columns} randerRow={renderRow} data={announcementsData} />
+        <Table
+          columns={columns}
+          randerRow={renderRow}
+          data={announcementsData}
+        />
       </div>
       {/* pagination  */}
       <div>
