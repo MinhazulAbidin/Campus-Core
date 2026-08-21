@@ -55,7 +55,7 @@ const SubjectsListPage = () => {
   );
 
   return (
-    <section className="bg-white flex-1 p-4 m-4 mt-0 rounded-md w-full">
+    <section className="bg-white flex-1 p-4 m-4 mt-0 rounded-md">
       {/* top  */}
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-semibold hidden md:block">Subjects</h2>
